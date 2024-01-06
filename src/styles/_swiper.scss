@@ -1,0 +1,44 @@
+@use 'variables';
+:root {
+  --swiper-theme-color: var(--color-white) !important;
+}
+.swiper-container {
+  .swiper-slide {
+    overflow: hidden !important;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    &[hidden] {
+      display: none !important;
+    }
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      background-image: url('/assets/arrow-fancy.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: var(--swiper-navigation-size);
+      height: var(--swiper-navigation-size);
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+  }
+
+  .swiper-wrapper {
+    transition-duration: 0.8s !important;
+    transition-timing-function: ease-out;
+  }
+}
+.swiper-container.swiper-container-horizontal .swiper-button-next {
+  transform: rotate(180deg) !important;
+}
+.swiper-container.swiper-container-vertical .swiper-button-next {
+  transform: rotate(270deg) !important;
+}
+.swiper-container.swiper-container-autoheight .swiper-slide {
+  // Default height auto not working correctly
+  height: auto !important;
+}

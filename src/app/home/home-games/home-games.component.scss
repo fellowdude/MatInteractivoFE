@@ -1,0 +1,71 @@
+@use 'variables';
+
+.contain {
+  max-width: 100rem;
+}
+
+.section {
+  position: relative;
+
+  .bg-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+  }
+  .bg-content {
+    width: 10%;
+    height: 9%;
+    min-width: 10rem;
+    position: absolute;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .bg-content-icon-1 {
+    left: 10%;
+    top: 5%;
+  }
+  .bg-content-icon-2 {
+    left: 80%;
+    top: 10%;
+  }
+  .bg-content-icon-3 {
+    top: 45%;
+    left: 5%;
+  }
+  .bg-content-icon-4 {
+    top: 40%;
+    left: 80%;
+    width: 15%;
+    height: 15%;
+  }
+  .bg-content-icon-5 {
+    left: 40%;
+    bottom: 6%;
+  }
+  // Circles
+  .bg-content-icon-6 {
+    left: 6%;
+    top: 18%;
+  }
+  .bg-content-icon-7 {
+    left: 20%;
+    bottom: 8%;
+  }
+  .bg-content-icon-8 {
+    left: 85%;
+    top: 18%;
+  }
+  .bg-content-icon-9 {
+    top: 43%;
+    left: 50%;
+  }
+}
+@media (min-width: variables.$break-sm) {
+  section {
+    padding-bottom: 15rem;
+  }
+}

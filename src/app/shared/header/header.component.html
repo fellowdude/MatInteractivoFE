@@ -1,0 +1,66 @@
+<div class="menu hide-lg">
+  <ul class="contain fx-row-nowrap">
+    <a [routerLink]="['/']">
+      <li class="bg-white">
+        <img height="60" src="./assets/logo_museo.png" />
+      </li>
+    </a>
+    <li>
+      <snr-i-burger (click)="toggleNavMobile()"></snr-i-burger>
+    </li>
+  </ul>
+</div>
+<nav
+  class="navbar is-sub"
+  [class.is-mb-hidden]="isNavMbHidden"
+  [class.is-hidden]="isNavHidden"
+  [class.is-first-load]="!isViewInit"
+>
+  <div class="contain contain-lg navbar-wrapper fx-row-nowrap">
+    <div class="logo show-lg">
+      <a [routerLink]="['/']" (click)="toggleNavMobile()">
+        <img width="320" height="123" src="./assets/logo_museo.png" />
+      </a>
+    </div>
+    <ul>
+      <li class="action-close hide-lg">
+        <snr-i-close (click)="toggleNavMobile()"></snr-i-close>
+      </li>
+      <li (click)="toggleNavMobile()">
+        <a [routerLink]="['/']">
+          <span>Inicio</span>
+        </a>
+      </li>
+      <li (click)="toggleNavMobile()">
+        <a [routerLink]="['/juegos']">
+          <span>Juegos</span>
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/noticias']" (click)="toggleNavMobile()">
+          <span>Novedades</span>
+        </a>
+      </li>
+      <li (click)="toggleNavMobile()">
+        <a [routerLink]="['/']" fragment="museo">
+          <span>MUSEO</span>
+        </a>
+      </li>
+      <li (click)="toggleNavMobile()">
+        <a [routerLink]="['/']" fragment="aliados">
+          <span>Aliados</span>
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/contacto']" (click)="toggleNavMobile()">
+          <span>Contacto</span>
+        </a>
+      </li>
+      <li class="icons-social">
+        <a href="https://www.facebook.com/MATInteractivo" target="_blank"><snr-i-fb></snr-i-fb></a>
+        <a href="https://twitter.com/LosAndesCaj" target="_blank"><snr-i-tw></snr-i-tw></a>
+        <a href="https://www.youtube.com/channel/UCHDve5PiVNSR2rNEqycZc-A/videos" target="_blank"><snr-i-yt></snr-i-yt></a>
+      </li>
+    </ul>
+  </div>
+</nav>

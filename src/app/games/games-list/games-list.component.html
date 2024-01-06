@@ -1,0 +1,17 @@
+<section class="section gutter-vertical-5">
+  <header class="section-header">
+    <p class="section-description">
+      Conocer los elementos agua y tierra nos permite entender, valorar y cuidar estos recursos. Te
+      invitamos a jugar y aprender sobre estos vitales elementos. Anímate, ¡vamos a jugar!
+    </p>
+  </header>
+  <div class="fx-row-wrapper">
+    <div class="games-list fx-row-wrap fx-row-space-3">
+      <ng-container *ngFor="let game of games">
+        <snr-games-thumb *ngIf="game.id !== '-1'"
+          [game]="game"
+        ></snr-games-thumb>
+      </ng-container>
+    </div>
+  </div>
+</section>

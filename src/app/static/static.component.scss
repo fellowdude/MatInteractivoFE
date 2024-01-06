@@ -1,0 +1,227 @@
+@use 'variables';
+.relative {
+  position: relative;
+  .bg-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+  }
+  .bg-content {
+    width: 10%;
+    height: 10%;
+    min-width: 10rem;
+    position: absolute;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .bg-content-icon-1 {
+    left: 5%;
+    top: 5%;
+  }
+  .bg-content-icon-2 {
+    right: 2%;
+    top: 8%;
+  }
+  .bg-content-icon-3 {
+    top: 25%;
+    left: 2%;
+  }
+  .bg-content-icon-4 {
+    top: 20%;
+    right: 2%;
+    width: 15%;
+    height: 15%;
+  }
+  main {
+    position: relative;
+    z-index: variables.$z-home-section;
+  }
+}
+.static-header {
+  //color: var(--color-white);
+  .static-header-icons {
+    justify-content: flex-end;
+    snr-i-like {
+      margin-left: var(--space-2);
+    }
+  }
+  .static-header-content {
+    padding: var(--space-3);
+    background-color: var(--static-bg-color);
+    h1 {
+      font-size: var(--font-size-3);
+      color: var(--static-title-color);
+      text-transform: uppercase;
+      line-height: 1em;
+      font-weight: bold;
+    }
+  }
+  //padding: var(--space-5);
+  padding-top: var(--space-0);
+}
+.static-body {
+  background-color: var(--color-white);
+  padding: var(--space-5);
+  @media (max-width: variables.$break-sm) {
+    padding: var(--space-1) var(--space-5);
+  }
+  .static-title {
+    text-align: center;
+    span {
+      display: inline-block;
+      font-weight: bold;
+      font-size: var(--font-size-3);
+      /* &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2px;
+        margin-top: var(--space-05);
+        background-color: var(--color-blue);
+      } */
+    }
+  }
+}
+@media (max-width: #{variables.$break-sm - 1px}) {
+  main.contain {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    section.section {
+      padding-top: var(--space-0);
+    }
+  }
+}
+@media (min-width: variables.$break-sm) {
+  .static-header .static-header-content {
+    width: 100%;
+    margin-right: auto;
+    padding: var(--space-9);
+  }
+  .static-body {
+    padding: var(--space-5) 0%;
+    .static-title {
+      font-size: var(--font-size-4);
+    }
+  }
+}
+@media (min-width: variables.$break-lg) {
+  .static-header .static-header-content {
+    width: 100%;
+    h1 {
+      font-size: var(--font-size-2);
+    }
+    p{
+      font-size: var(--font-size-4);
+    }
+  }
+}
+
+.text-container{
+  width: 60%;
+  position: absolute;
+  background: rgba(229, 230, 232, 0.95);
+  top: 50%;
+  transform: translateY(-50%);
+  min-height: 400px;
+  @media (max-width: variables.$break-sm) {
+    width: 80%;
+    object-fit: contain;
+    left: 0;
+    right: 0;
+    margin: auto;
+    min-height: 200px;
+  }
+}
+
+.img-cover{
+  height: 700px;
+  width: 80%;
+  margin-left: auto;
+  @media (max-width: variables.$break-sm) {
+    width: 100%;
+    object-fit: contain;
+    height: 400px;
+  }
+}
+
+.static-body-content{
+  padding: var(--space-0) var(--space-3);
+  text-align: center;
+  span{
+    display: block;
+    margin: auto;
+    width: 80%;
+    font-size: var(--font-size-4);
+    font-weight: bold;
+  }
+}
+
+.banner-container{
+  display: flex;
+  flex-direction: row;
+  @media (max-width: variables.$break-sm) {
+    flex-direction: column;
+  }
+  &.reverse{
+    flex-direction: row-reverse;
+    @media (max-width: variables.$break-sm) {
+      flex-direction: column;
+    }
+  }
+  .banner-background{
+    width: 50%;
+    height: 600px;
+    background: var(--static-bg-color);
+    .banner-body{
+      padding: var(--space-5);
+      position: absolute;
+      margin: auto;
+      left: 0;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @media (max-width: variables.$break-sm) {
+      width: 100%;
+      height: 400px;
+    }
+  }
+  .banner-image{
+    width: 50%;
+    height: 600px;
+    background-size: cover;
+    @media (max-width: variables.$break-sm) {
+      width: 100%;
+      height: 400px;
+    }
+  }
+}
+
+:host::ng-deep{
+  .static-body-content{
+    p{
+      text-align: justify;
+    }
+  }
+  .banner-background{
+    .banner-body{
+      h3{
+        font-weight: bold;
+        font-size: var(--font-size-3);
+      }
+      p{
+        font-size: var(--font-size-4);
+        width: 80%;
+        padding-top: var(--space-2);
+        @media (max-width: variables.$break-sm) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

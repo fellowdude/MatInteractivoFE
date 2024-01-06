@@ -1,0 +1,97 @@
+<section class="section is-sub-2">
+  <div class="bg-wrapper">
+    <!-- Icons -->
+    <div
+      data-aos="zoom-in"
+      data-aos-delay="500"
+      class="bg-content bg-content-icon-1"
+      defaultImage="./assets/placeholder.svg"
+      lazyLoad="./assets/bg-icon1.png"
+    ></div>
+    <div
+      data-aos="zoom-in"
+      data-aos-delay="500"
+      class="bg-content bg-content-icon-2"
+      defaultImage="./assets/placeholder.svg"
+      lazyLoad="./assets/bg-icon2.png"
+    ></div>
+    <div
+      data-aos="zoom-in"
+      data-aos-delay="500"
+      class="bg-content bg-content-icon-3"
+      defaultImage="./assets/placeholder.svg"
+      lazyLoad="./assets/bg-icon3.png"
+    ></div>
+    <div
+      data-aos="zoom-in"
+      data-aos-delay="500"
+      class="bg-content bg-content-icon-4"
+      defaultImage="./assets/placeholder.svg"
+      lazyLoad="./assets/bg-icon4.png"
+    ></div>
+    <div
+      data-aos="zoom-in"
+      data-aos-delay="500"
+      class="bg-content bg-content-icon-5"
+      defaultImage="./assets/placeholder.svg"
+      lazyLoad="./assets/bg-icon5.png"
+    ></div>
+    <!-- Circles -->
+    <div
+      data-aos="fade-down"
+      data-aos-delay="500"
+      class="bg-content bg-content-icon-6"
+      defaultImage="./assets/placeholder.svg"
+      lazyLoad="./assets/bg-circle.png"
+    ></div>
+    <div
+      data-aos="fade-down"
+      data-aos-delay="500"
+      class="bg-content bg-content-icon-7"
+      defaultImage="./assets/placeholder.svg"
+      lazyLoad="./assets/bg-circle.png"
+    ></div>
+    <div
+      data-aos="fade-down"
+      data-aos-delay="500"
+      class="bg-content bg-content-icon-8"
+      defaultImage="./assets/placeholder.svg"
+      lazyLoad="./assets/bg-circle.png"
+    ></div>
+    <div
+      data-aos="fade-down"
+      data-aos-delay="500"
+      class="bg-content bg-content-icon-9"
+      defaultImage="./assets/placeholder.svg"
+      lazyLoad="./assets/bg-circle.png"
+    ></div>
+  </div>
+  <div class="contain gutter-vertical-5">
+    <header class="section-header gutter-vertical-2" data-aos="fade-up">
+      <h2 class="title">
+        <a [routerLink]="'/juegos'"><span>Juegos</span></a>
+      </h2>
+      <p class="section-description">
+        Desafía tu talento<br />
+        y divértete
+      </p>
+    </header>
+    <ul class="gutter-vertical-2">
+      <li data-aos="fade-right">
+        <snr-home-game-article
+          [card]="cards[0]"
+          color="var(--color-yellow)"
+          data-aos-delay="500"
+        ></snr-home-game-article>
+      </li>
+      <li data-aos="fade-left">
+        <snr-home-game-article
+          [card]="cards[2]"
+          color="var(--color-green)"
+          isInverted="true"
+          data-aos-delay="500"
+        ></snr-home-game-article>
+      </li>
+    </ul>
+  </div>
+</section>

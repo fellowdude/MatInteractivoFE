@@ -1,0 +1,42 @@
+<section class="bg-gray section is-sub-gray">
+  <div class="contain contain-lg gutter-vertical-5">
+    <header class="section-header gutter-vertical-2" data-aos="fade-up">
+      <h2 class="title">
+        <a [routerLink]="'/noticias'"><span>Novedades</span></a>
+      </h2>
+      <p class="section-description">Entérate de lo que hacemos</p>
+    </header>
+    <snr-loader *ngIf="!loaded"></snr-loader>
+    <div
+      *ngIf="loaded"
+      class="fx-row-wrapper"
+      data-aos="fade-in"
+      data-aos-delay="500"
+    >
+      <ul class="articles-list fx-row-wrap fx-row-space-5">
+        <li class="gutter-vertical-2">
+          <div class="gutter-vertical-2">
+            <h3 class="news-title news-title-blue"><span>Noticias</span></h3>
+            <snr-card link="/noticias" [card]="cardNoticia" [id]="1"></snr-card>
+          </div>
+        </li>
+        <li>
+          <div class="gutter-vertical-2">
+            <h3 class="news-title news-title-yellow">
+              <span>Charlas</span>
+            </h3>
+            <snr-card link="/noticias" [card]="cardCharla" [id]="2"></snr-card>
+          </div>
+        </li>
+        <li>
+          <div class="gutter-vertical-2">
+            <h3 class="news-title news-title-green">
+              <span>Recursos Educativos</span>
+            </h3>
+            <snr-card link="/noticias" [card]="cardRecurso" [id]="3"></snr-card>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,21 @@
+@use 'variables';
+
+.section {
+  margin-bottom: var(--space-5);
+}
+
+.games-list {
+  --n-articles-row: 1;
+
+  snr-games-thumb {
+    display: block;
+    width: calc(100% / var(--n-articles-row) - 0.01px);
+  }
+}
+
+@media (min-width: variables.$break-sm) {
+  .games-list {
+    --n-articles-row: 2;
+  }
+}
+

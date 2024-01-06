@@ -1,0 +1,62 @@
+<section class="section gutter-vertical-5">
+  <header class="section-header">
+    <p class="section-description">
+      Nuestras NOVEDADES están orientadas a toda la familia, aunque ponemos especial énfasis en
+      contenidos y temas que nos ayuden a entender nuestro entorno de una manera muy fácil,
+      creativa e innovadora.
+    </p>
+  </header>
+  <div class="fx-row-wrapper">
+    <div class="news-list-type fx-row-wrap fx-row-space-2">
+      <h3 class="news-type news-type-blue">
+        <span
+          [class.selected]="selectedNewsType === 'noticias'"
+          (click)="getNewsList('noticias')"
+          >NOTICIAS</span
+        >
+      </h3>
+      <h3 class="news-type news-type-yellow">
+        <span
+          [class.selected]="selectedNewsType === 'charlas'"
+          (click)="getNewsList('charlas')"
+          >CHARLAS</span
+        >
+      </h3>
+      <h3 class="news-type news-type-green">
+        <span
+          [class.selected]="selectedNewsType === 'recursos_educativos'"
+          (click)="getNewsList('recursos_educativos')"
+          >RECURSOS EDUCATIVOS</span
+        >
+      </h3>
+    </div>
+  </div>
+  <snr-loader *ngIf="!loaded"></snr-loader>
+  <div *ngIf="loaded" class="fx-row-wrapper">
+    <div class="fx-row-wrap fx-row-space-4 news-list">
+      <snr-card
+        *ngFor="let card of cards"
+        type="rounded"
+        link="/noticias"
+        btnText="leer más"
+        [id]="id"
+        [card]="card"
+        [dateColor]="cardDateColor"
+      ></snr-card>
+    </div>
+    <nav class="fx-row-nowrap">
+      <img
+        *ngIf="page > 1"
+        class="arrow arrow-prev"
+        (click)="prevPage()"
+        src="./assets/arrow-fancy.png"
+      />
+      <img
+        *ngIf="!pageLimit"
+        class="arrow arrow-next"
+        (click)="nextPage()"
+        src="./assets/arrow-fancy.png"
+      />
+    </nav>
+  </div>
+</section>

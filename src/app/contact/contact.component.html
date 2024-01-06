@@ -1,0 +1,47 @@
+<main class="contain">
+  <label class="game-title"> Contáctenos </label>
+  <section [formGroup]="contactForm" class="section form">
+    <div class="form-control">
+      <label>Nombre*</label>
+      <input type="text" formControlName="nombre" />
+    </div>
+    <div class="form-control">
+      <label>Correo*</label>
+      <input type="email" formControlName="correo" />
+    </div>
+    <div class="form-control">
+      <label>Dirección</label>
+      <input type="text" formControlName="direccion" />
+    </div>
+    <div class="form-control">
+      <label>Teléfono</label>
+      <input type="number" formControlName="telefono" />
+    </div>
+    <div class="form-control">
+      <label>Mensaje*</label>
+      <textarea rows="7" formControlName="mensaje"></textarea>
+    </div>
+    <div class="buttonery">
+      <div>
+        <a class="btn" (click)="sendForm()">
+          <span>Enviar</span>
+        </a>
+        <span class="to-send" *ngIf="loadingSend">Enviando...</span>
+        <span class="sent" [style.opacity]="isSent ? 1 : 0">Enviado!</span>
+      </div>
+      <div class="icons-social">
+        <a href="https://www.facebook.com/MATInteractivo" target="_blank"
+          ><snr-i-fb [alt]="true" [width]="50" [height]="50"></snr-i-fb
+        ></a>
+        <a href="https://twitter.com/LosAndesCaj" target="_blank"
+          ><snr-i-tw [alt]="true" [width]="50" [height]="50"></snr-i-tw
+        ></a>
+        <a
+          href="https://www.youtube.com/channel/UCWgRBlGj3UdPldFG4dLD1Zg"
+          target="_blank"
+          ><snr-i-yt [alt]="true" [width]="50" [height]="50"></snr-i-yt
+        ></a>
+      </div>
+    </div>
+  </section>
+</main>

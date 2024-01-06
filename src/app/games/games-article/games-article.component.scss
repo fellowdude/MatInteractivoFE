@@ -1,0 +1,75 @@
+@use 'variables';
+
+.fullscreen-placeholder {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.is-loading {
+  opacity: 0;
+}
+
+.game-title {
+  color: var(--color-yellow);
+  font-size: var(--font-size-3);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.game-detail{
+  width: 80%;
+  display: block;
+  margin-top: 0;
+}
+
+.android-only{
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  object-fit: cover;
+}
+
+@media (min-width: variables.$break-md) {
+  .game-body {
+    display: flex;
+    flex-flow: row nowrap;
+
+    .game-main {
+      display: flex;
+      flex-basis: 75%;
+      flex-grow: 1;
+      align-content: flex-start;
+      flex-direction: column;
+      margin-bottom: var(--space-11);
+    }
+    .game-aside {
+      display: flex;
+      flex-basis: 25%;
+      flex-grow: 1;
+      align-content: stretch;
+
+      .game-aside-wrapper {
+        flex-basis: 100%;
+        position: relative;
+
+        .swiper-container {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          top: 0;
+        }
+      }
+    }
+  }
+}
+
+:host::ng-deep{
+  .swiper-button-prev,
+  .swiper-button-next{
+    display: none;
+  }
+}

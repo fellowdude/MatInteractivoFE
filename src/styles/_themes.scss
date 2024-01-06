@@ -1,0 +1,56 @@
+@use 'variables';
+
+@mixin theme-light {
+  --color-txt-main-primary: var(--color-black);
+  --color-txt-main-secondary: var(--color-yellow);
+  --color-txt-main-accent: var(--color-blue);
+  --color-bg-main: var(--color-white);
+
+  --color-txt-sub-title: var(--color-white);
+  --color-txt-sub-primary: var(--color-black);
+  --color-txt-sub-secondary: #202b36;
+  --color-txt-sub-accent: var(--color-black);
+  --color-bg-sub: var(--color-white);
+  --color-bg-sub-primary: var(--color-blue);
+  --color-bg-sub-secondary: #202b36;
+
+  --color-txt-action-primary: var(--color-yellow);
+  --color-bg-action-primary: var(--color-white);
+  --color-txt-action-secondary: var(--color-white);
+  --color-bg-action-secondary: var(--color-yellow);
+
+  --color-lazyloading: #bbbcbe;
+}
+
+:root {
+  @each $txt, $val in variables.$space-sizes {
+    --space-#{$txt}: #{$val};
+  }
+  @each $txt, $val in variables.$font-sizes-mb {
+    --font-size-#{$txt}: #{$val};
+  }
+  @each $txt, $val in variables.$colors {
+    --color-#{$txt}: #{$val};
+  }
+  --item-margin: var(--space-3);
+  --border-radius-1: 1rem;
+  --border-radius-02: 2px;
+  --border-radius-2: 2rem;
+  --app-max-width: 120rem;
+  --app-max-width-lg: 150rem;
+
+  --ratio-16-9: 56%;
+  --ratio-1-1: 100%;
+  --ratio-4-3: 75%;
+  --ratio-4-6: 66%;
+
+  @include theme-light;
+}
+
+@media (min-width: variables.$break-sm) {
+  :root {
+    @each $txt, $val in variables.$font-sizes {
+      --font-size-#{$txt}: #{$val};
+    }
+  }
+}

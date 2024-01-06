@@ -1,0 +1,149 @@
+@use 'variables';
+
+:host {
+  font-family: Bebas Neue;
+}
+
+.menu {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: variables.$z-header-menu;
+  height: variables.$header-height;
+
+  ul {
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-2) var(--space-0);
+  }
+
+  // TODO change logo to a component
+  img {
+    // temporal fix for flex center
+    display: block;
+  }
+}
+
+.navbar {
+  --navbar-horizontal-p: var(--space-5);
+  --navbar-logo-width: 32rem;
+
+  position: fixed;
+  right: 0;
+  height: 100%;
+  width: variables.$navbar-mb-width;
+  z-index: variables.$z-header-navbar;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+  overflow: hidden;
+  background-color: var(--color-blue);
+  color: var(--color-white);
+
+  .navbar-wrapper {
+    height: 100%;
+    line-height: 1;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: var(--color-white);
+    img {
+      width: var(--navbar-logo-width);
+      height: auto;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    position: relative;
+    flex-grow: 1;
+    padding: var(--space-2);
+
+    li {
+      display: flex;
+      align-items: center;
+      padding: var(--space-0) var(--space-2);
+      text-transform: uppercase;
+      font-size: var(--font-size-3);
+    }
+
+    li.action-close {
+      position: absolute;
+      right: 0;
+      top: var(--space-2);
+    }
+    li.icons-social > * + * {
+      padding-left: var(--space-1);
+    }
+  }
+}
+
+.is-first-load {
+  transition: none !important;
+}
+
+@media (min-width: variables.$break-lg) {
+  .navbar {
+    top: 0;
+    right: unset;
+    width: 100%;
+    height: variables.$header-height;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease,
+      transform 0.3s ease;
+    .logo {
+      padding: var(--space-0) var(--space-3);
+    }
+    ul {
+      flex-flow: row nowrap;
+      justify-content: flex-end;
+      padding: var(--space-0) var(--navbar-horizontal-p);
+
+      li {
+        position: relative;
+        font-size: var(--font-size-45);
+      }
+      // Lines inbetween links
+      li:not(.action-close) + li:not(.icons-social)::before {
+        content: '';
+        width: 2px;
+        height: 1.5em;
+        background-color: var(--color-white);
+        position: absolute;
+        left: 0;
+      }
+      li.icons-social {
+        padding: 0;
+      }
+    }
+  }
+
+  .navbar:not(.is-hidden):not(.is-transparent) {
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 12px 16px 2px,
+      rgba(0, 0, 0, 0.12) 0px 6px 24px 5px, rgba(0, 0, 0, 0.2) 0px 8px 10px -5px;
+  }
+
+  .is-transparent {
+    background-color: transparent;
+  }
+
+  .is-hidden {
+    transform: translate3d(0px, -100%, 0px);
+  }
+}
+@media (min-width: variables.$break-xl) {
+  .navbar {
+    --navbar-horizontal-p: 10rem;
+  }
+}
+// If these increase too much then just manage it from js
+@media (max-width: #{variables.$break-lg - 1px}) {
+  .is-mb-hidden {
+    transform: translate3d(100%, 0px, 0px);
+  }
+}

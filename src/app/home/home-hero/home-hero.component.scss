@@ -1,0 +1,156 @@
+@use 'variables';
+
+section {
+  --section-p-top: var(--space-1);
+  --section-bg-curve-height: 5rem;
+
+  position: relative;
+  z-index: variables.$z-home-section;
+  padding-top: calc(#{variables.$header-height} + var(--section-p-top));
+  padding-bottom: var(--section-bg-curve-height);
+  font-family: Bebas Neue;
+
+  .bg-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+
+    .bg-content {
+      width: 100%;
+      height: 100%;
+      background-position: center 10%;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .bg-svg {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      svg {
+        position: relative;
+        height: var(--section-bg-curve-height);
+        min-width: 100%;
+      }
+    }
+  }
+
+  h1 {
+    position: relative;
+    z-index: variables.$z-home-header;
+    font-size: var(--font-size-1);
+    //margin-bottom: var(--space-5);
+    margin-top: var(--space-5);
+    align-items: flex-end;
+  }
+
+  .header {
+    color: var(--header-color);
+    //Hardcoded value, might have to be changed if font-family changes
+    line-height: 0.72em;
+  }
+
+  .header-green {
+    --header-color: var(--color-green);
+  }
+  .header-yellow {
+    --header-color: var(--color-yellow);
+    position: relative;
+    //Hardcoded value, might have to be changed if font-family changes
+    padding-left: 0.4em;
+  }
+
+  .header-circles {
+    --circles-top-margin: 5rem;
+    justify-content: flex-end;
+  }
+
+  .header-circle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: var(--circle-z);
+    width: var(--circle-diameter);
+    height: var(--circle-diameter);
+    background-color: var(--circle-bg);
+    color: var(--circle-color);
+    border-radius: 50%;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: var(--font-size-3);
+    line-height: 1.1em;
+    box-shadow: -20px 0px 25px 10px rgb(10 12 16 / 50%);
+  }
+
+  .header-circle-white {
+    --circle-diameter: 3em;
+    --circle-bg: var(--color-white);
+    --circle-color: var(--color-yellow);
+    --circle-z: #{variables.$z-home-header};
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .header-circle-blue {
+    --circle-diameter: 5em;
+    --circle-bg: var(--color-blue);
+    --circle-color: var(--color-txt-main-primary);
+    --circle-z: #{variables.$z-home-header + 1};
+    margin-top: var(--circles-top-margin);
+    margin-left: auto;
+  }
+  .header-circle-green {
+    --circle-diameter: 7em;
+    --circle-bg: var(--color-green);
+    --circle-color: var(--color-white);
+    --circle-z: #{variables.$z-home-header + 2};
+    right: var(--space-2);
+    bottom: var(--space-3);
+    margin-top: var(--circles-top-margin);
+  }
+}
+
+@media (min-width: variables.$break-sm) {
+  section {
+    --section-p-top: 10rem;
+    --section-bg-curve-height: 18rem;
+    padding-bottom: 0;
+    .bg-content {
+      background-position: center top;
+    }
+
+    h1 {
+      margin-bottom: 25rem;
+      font-size: 11rem;
+      align-items: flex-start;
+      margin-top: 0;
+    }
+
+    .header-blue {
+      left: 11rem;
+    }
+  }
+}
+
+@media (min-width: variables.$break-md) {
+  section {
+    --section-p-top: 10rem;
+    h1 {
+      margin-bottom: 10rem;
+    }
+    .header-circles {
+      --circles-top-margin: 20rem;
+    }
+    .header-circle {
+      font-size: var(--font-size-25);
+    }
+  }
+}

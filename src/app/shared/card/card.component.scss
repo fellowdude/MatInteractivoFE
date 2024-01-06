@@ -1,0 +1,50 @@
+@use 'variables';
+
+article {
+  .title {
+    --line-height: 1.2em;
+    --title-color: grey;
+    font-weight: bold;
+    font-family: inherit;
+    font-size: var(--font-size-45);
+  }
+  p {
+    --line-height: 1.5em;
+  }
+  .date {
+    color: darkgrey;
+  }
+}
+
+article.rounded {
+  background-color: var(--color-grey);
+  border-radius: var(--border-radius-2);
+  .article-img .img-content {
+    --img-ratio: var(--ratio-4-6);
+  }
+  .article-body {
+    margin: var(--space-0) var(--space-3);
+    margin-bottom: var(--space-2);
+    font-size: var(--font-size-5);
+  }
+  .title {
+    font-size: var(--font-size-5);
+    color: var(--color-txt-main-primary);
+  }
+}
+
+@media (min-width: variables.$break-sm) {
+  article.horizontal {
+    .article-wrapper {
+      display: flex;
+      flex-flow: row wrap;
+    }
+
+    .article-img {
+      width: 45%;
+    }
+    .article-body {
+      width: 55%;
+    }
+  }
+}

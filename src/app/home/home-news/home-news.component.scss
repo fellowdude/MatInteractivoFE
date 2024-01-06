@@ -1,0 +1,41 @@
+@use 'variables';
+
+.articles-list {
+  --n-articles-row: 1;
+  li {
+    display: block;
+    margin-top: 0;
+    width: calc(100% / var(--n-articles-row) - 0.01px);
+    .news-title {
+      font-family: Bebas Neue;
+      font-size: var(--font-size-3);
+      padding: var(--space-1) var(--space-2);
+      color: var(--color-white);
+      span {
+        vertical-align: sub;
+      }
+    }
+    .news-title-blue {
+      background-color: var(--color-blue);
+    }
+    .news-title-yellow {
+      background-color: var(--color-yellow);
+    }
+    .news-title-green {
+      background-color: var(--color-green);
+    }
+    snr-card {
+      display: block;
+    }
+  }
+}
+
+@media (min-width: variables.$break-sm) {
+  .articles-list {
+    --n-articles-row: 3;
+    li > * {
+      width: 90%;
+      margin: auto;
+    }
+  }
+}

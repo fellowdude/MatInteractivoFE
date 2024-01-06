@@ -1,0 +1,15 @@
+<!-- TODO replace link with actual link -->
+<article class="gutter-vertical-1">
+  <div class="img-content">
+    <a [routerLink]="'/juegos/' + game?.id">
+      <img
+        class="img-display img-hoverable"
+        defaultImage="./assets/placeholder.svg"
+        [lazyLoad]="game?.imgUrls[0]"
+      />
+    </a>
+  </div>
+  <h3 class="subtitle txt-clip-2">
+    <a [routerLink]="'/juegos/id'">{{ game?.title }}</a>
+  </h3>
+</article>

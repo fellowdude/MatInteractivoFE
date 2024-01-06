@@ -1,0 +1,111 @@
+<div class="relative">
+  <div class="show-md bg-wrapper">
+    <div
+      data-aos="zoom-in"
+      data-aos-delay="500"
+      class="bg-content bg-content-icon-1"
+      defaultImage="./assets/placeholder.svg"
+      lazyLoad="./assets/bg-icon1.png"
+    ></div>
+    <div
+      data-aos="zoom-in"
+      data-aos-delay="800"
+      class="bg-content bg-content-icon-2"
+      defaultImage="./assets/placeholder.svg"
+      lazyLoad="./assets/bg-icon2.png"
+    ></div>
+    <div
+      data-aos="zoom-in"
+      data-aos-delay="800"
+      class="bg-content bg-content-icon-3"
+      defaultImage="./assets/placeholder.svg"
+      lazyLoad="./assets/bg-icon3.png"
+    ></div>
+    <div
+      data-aos="zoom-in"
+      data-aos-delay="1100"
+      class="bg-content bg-content-icon-4"
+      defaultImage="./assets/placeholder.svg"
+      lazyLoad="./assets/bg-icon4.png"
+    ></div>
+  </div>
+  <main class="contain">
+    <section class="section gutter-vertical-4">
+      <!-- <div
+        defaultImage="./assets/placeholder.svg"
+        [lazyLoad]="article.imgUrl"
+        class="img-cover static-header"
+        [style.--static-bg-color]="article.color"
+        [style.color]="
+          article.color == 'var(--color-black)' ||
+          article.color == 'var(--color-green)'
+            ? 'var(--color-white)'
+            : 'var(--color-black'
+        "
+      >
+        <div class="gutter-vertical-1 static-header-content">
+
+          <h1>{{ article.headerTitle }}</h1>
+          <p>{{ article.headerSubtitle }}</p>
+        </div>
+      </div> -->
+      <!-- <div class="static-header-icons fx-row-nowrap">
+            <snr-i-share></snr-i-share>
+            <snr-i-like></snr-i-like>
+          </div> -->
+      <div class="relative static-header">
+        <div class="text-container">
+          <div  [style.--static-title-color]="article.color" class="gutter-vertical-1 static-header-content" >
+            <!-- <div class="static-header-icons fx-row-nowrap">
+              <snr-i-share></snr-i-share>
+              <snr-i-like></snr-i-like>
+            </div> -->
+            <h1>{{ article.headerTitle }}</h1>
+            <p>{{ article.headerSubtitle }}</p>
+          </div>
+        </div>
+        <div defaultImage="./assets/placeholder.svg"
+        [lazyLoad]="article.imgUrl"
+        class="img-cover"
+        [style.--static-bg-color]="article.color"
+        [style.color]="
+          article.color == 'var(--color-black)' ||
+          article.color == 'var(--color-green)'
+            ? 'var(--color-white)'
+            : 'var(--color-black'
+          "
+        >
+
+        </div>
+      </div>
+      <div class="static-body gutter-vertical-4">
+        <h2 class="static-title">
+          <span>{{ article.title }}</span>
+        </h2>
+        <div
+          class="static-body-content gutter-vertical-2"
+          [innerHtml]="article.body | sanitizeHtml"
+        ></div>
+      </div>
+      <div class="static-banners gutter-vertical-0">
+        <ng-container *ngFor="let banner of article?.banners; let i = index">
+          <div class="banner-container" [ngClass]="{'reverse': i % 2 == 0}">
+            <div class="banner-background relative" [style.backgroundColor]="banner.color">
+              <div class="banner-body" [innerHTML]="banner.body"></div>
+            </div>
+            <div class="banner-image" defaultImage="./assets/placeholder.svg" [lazyLoad]="banner.image"></div>
+          </div>
+        </ng-container>
+      </div>
+      <div class="static-body gutter-vertical-4" >
+        <div
+          class="static-body-content gutter-vertical-2" *ngIf="article.body2"
+          [innerHtml]="article?.body2 | sanitizeHtml"
+        ></div>
+        <div class="static-body-content gutter-vertical-2">
+          <span>{{article?.footerText}}</span>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>

@@ -1,0 +1,19 @@
+<article [class.is-open]="isOpen">
+  <div class="article-wrapper gutter-vertical-05">
+    <div class="article-content">
+      <div class="article-decoration img-round"></div>
+      <h4>{{ article.headerTitle }}</h4>
+      <p *ngIf="isOpen">
+        {{ article.headerSubtitle }}
+      </p>
+      <div class="article-footer">
+        <span (click)="isOpen = !isOpen">{{
+          isOpen ? 'ver menos' : 'ver más'
+        }}</span>
+        <a [routerLink]="['/museo/' + article.id]">
+          <snr-i-arrow *ngIf="isOpen"></snr-i-arrow>
+        </a>
+      </div>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,33 @@
+<section class="section gutter-vertical-2" *ngIf="article">
+  <header class="gutter-vertical-2">
+    <h1>
+      {{ article.title }}
+    </h1>
+    <h4>
+      <span class="subtitle date">{{
+        article.publication_date | date: 'LL/d/yyyy'
+      }}</span>
+    </h4>
+  </header>
+  <div class="news-body gutter-vertical-2 static-body-content">
+
+    <div *ngFor="let detail of article.post_detail" [ngSwitch]="detail.type">
+      <div
+        *ngSwitchCase="'text'"
+        [innerHtml]="detail.value | sanitizeHtml"
+      ></div>
+      <div *ngSwitchCase="'image'" class="news-body-img">
+        <img [src]="article.url_attachment + detail.value" />
+      </div>
+    </div>
+
+    <div class="breadcrumb">
+      <a class="next" [routerLink]="['/noticias']" [queryParams]="{id: id}">
+        <img width="24" height="auto" src="./assets/arrow-{{id}}.png"/>
+        <ng-container *ngIf="id == 1">Noticias</ng-container>
+        <ng-container *ngIf="id == 2">Charlas</ng-container>
+        <ng-container *ngIf="id == 3">Recursos Educativos</ng-container>
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,93 @@
+<section id="museo" class="section is-sub">
+  <div class="bg-wrapper">
+    <div
+      data-aos="zoom-in"
+      data-aos-delay="500"
+      class="bg-content bg-content-icon-6"
+      defaultImage="./assets/placeholder.svg"
+      lazyLoad="./assets/bg-icon6.png"
+    ></div>
+    <div
+      data-aos="zoom-in"
+      data-aos-delay="500"
+      class="bg-content bg-content-icon-7"
+      defaultImage="./assets/placeholder.svg"
+      lazyLoad="./assets/bg-icon7.png"
+    ></div>
+    <div
+      data-aos="zoom-in"
+      data-aos-delay="500"
+      class="bg-content bg-content-icon-9"
+      defaultImage="./assets/placeholder.svg"
+      lazyLoad="./assets/bg-icon9.png"
+    ></div>
+    <div
+      data-aos="zoom-in"
+      data-aos-delay="500"
+      class="bg-content bg-content-icon-11"
+      defaultImage="./assets/placeholder.svg"
+      lazyLoad="./assets/bg-icon11.png"
+    ></div>
+    <div
+      data-aos="zoom-in"
+      data-aos-delay="500"
+      class="bg-content bg-content-icon-12"
+      defaultImage="./assets/placeholder.svg"
+      lazyLoad="./assets/bg-icon12.png"
+    ></div>
+    <div class="bg-svg">
+      <svg
+        viewBox="0 0 800 100"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <clipPath id="info-wave">
+            <path
+              d="m-8.77039,46.02724c15.39269,32.89384 38.30131,48.43345 111.84438,41.79019c73.54307,-6.64327 91.2825,-68.60797 222.49473,-56.18362c84.57582,10.57571 120.73419,65.8813 212.69931,63.84624c91.96512,-2.03506 168.91837,-75.1515 264.07696,-68.65954l4.07692,577.17949l-831,7l22.47436,-608.5625z"
+            />
+          </clipPath>
+        </defs>
+        <rect
+          style="transform: scaleX(1, -1)"
+          clip-path="url(#info-wave)"
+          fill="white"
+          height="600"
+          width="800"
+          y="0"
+          x="0%"
+        ></rect>
+      </svg>
+    </div>
+  </div>
+  <div class="contain gutter-vertical-5">
+    <header class="section-header gutter-vertical-2" data-aos="fade-up">
+      <h2 class="title"><span>MUSEO</span></h2>
+      <p class="section-description">Visita el MAT</p>
+    </header>
+    <div class="fx-row-wrap fx-row-space-1">
+      <ul
+        class="article-list gutter-vertical-2"
+        data-aos="fade-left"
+        data-aos-delay="500"
+      >
+        <li *ngFor="let article of museumArticles; let i = index">
+          <snr-home-info-article
+            [article]="article"
+            [isOpen]="i === 0"
+          ></snr-home-info-article>
+        </li>
+      </ul>
+      <div class="info-aside" data-aos="zoom-in" data-aos-delay="1000">
+        <div
+          class="info-circle info-circle-img"
+          defaultImage="./assets/placeholder.svg"
+          lazyLoad="./assets/fotomuseo.jpg"
+        ></div>
+        <div class="info-circle info-circle-decoration info-circle-1"></div>
+        <div class="info-circle info-circle-decoration info-circle-2"></div>
+        <div class="info-circle info-circle-decoration info-circle-3"></div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,47 @@
+<div
+  class="gutter-vertical-4"
+  [class.is-inverted]="isInverted"
+  [style.--color-article]="color"
+>
+  <article>
+    <div class="article-wrapper fx-row-space-4">
+      <snr-home-game-new></snr-home-game-new>
+      <div class="article-img">
+        <div style="border-radius: 25px; overflow: hidden;">
+          <swiper class="swiper-container">
+            <div *ngFor="let img of card?.imgUrls" class="swiper-slide">
+              <div class="img-content img-ratio-4-6">
+                <a [routerLink]="[link + '/' + card?.id]">
+                  <img
+                    class="img-display img-hoverable"
+                    defaultImage="./assets/placeholder.svg"
+                    [lazyLoad]="img"
+                  />
+                </a>
+              </div>
+            </div>
+          </swiper>
+        </div>
+      </div>
+      <div class="article-body fx-column gutter-vertical-2">
+        <div class="gutter-vertical-2">
+          <h3 class="title txt-clip-2">
+            <a [routerLink]="[link + '/' + card?.id]">{{ card?.title }}</a>
+          </h3>
+          <p>
+            {{ card?.description }}
+          </p>
+        </div>
+        <a class="btn" [routerLink]="[link + '/' + card?.id]">
+          <span>haz click para jugar</span>
+        </a>
+      </div>
+    </div>
+  </article>
+  <h4
+    class="title"
+    data-aos="fade-down"
+    data-aos-delay="200"
+    [innerHTML]="card?.subtitle"
+  ></h4>
+</div>

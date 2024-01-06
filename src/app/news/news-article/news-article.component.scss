@@ -1,0 +1,45 @@
+header {
+  h1 {
+    font-weight: bold;
+    font-size: var(--font-size-3);
+    line-height: 1;
+  }
+  .date {
+    color: var(--color-txt-main-accent);
+  }
+}
+.news-body {
+  padding-bottom: 10rem;
+  .news-body-img {
+    text-align: center;
+
+    img {
+      width: 100%;
+      max-height: 50rem;
+      height: auto;
+      margin: auto;
+      object-fit: contain;
+    }
+  }
+  .breadcrumb {
+    font-family: Bebas Neue;
+    font-size: var(--font-size-4);
+    img {
+      margin-right: var(--space-1);
+      width: 0.8em;
+    }
+  }
+}
+
+
+
+:host::ng-deep{
+  a{
+    color: blue;
+    text-decoration: underline;
+    &.next{
+      text-decoration: none;
+      color: var(--color-black)
+    }
+  }
+}
